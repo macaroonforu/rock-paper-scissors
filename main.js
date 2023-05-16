@@ -83,14 +83,15 @@ function playATurn(){
         if(computerScore ==5){
             finalResult.textContent = "Sorry! you lost to the computer! 😭"; 
         }
-        const finalBox = document.querySelector(".final-result").classList.add("pink"); 
-        const roundResult = document.querySelector(".round-text");
+        document.querySelector(".final-result").classList.add("pink"); 
+        document.querySelector(".round-text");
         //roundResult.innerHTML = "";  
         score.textContent = "Final Score: Computer: " + computerScore + " Human Score: " + humanScore; 
         const buttons = document.querySelectorAll(".btn")
         buttons.forEach(function(currentBtn){
         currentBtn.disabled = true; 
         })
+        document.querySelector(".reset").classList.add("visible"); 
     }
 }
 
@@ -115,10 +116,10 @@ function reset(){
     humanImg.removeAttribute("src"); 
 
     document.querySelector(".final-result").classList.remove("pink"); 
-
-
     document.querySelector(".Computer").classList.remove("visible"); 
     document.querySelector(".Human").classList.remove("visible"); 
+    document.querySelector(".reset").classList.remove("visible"); 
+
      
 }
 
