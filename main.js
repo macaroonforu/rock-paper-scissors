@@ -1,79 +1,127 @@
+let humanScore = 0; 
+let computerScore = 0; 
+
+const buttons = document.querySelectorAll(".btn")
+buttons.forEach(function(currentBtn){
+  currentBtn.addEventListener('click', playATurn)
+})
+
+const resetButton = document.querySelector(".reset");
+resetButton.addEventListener('click', reset); 
+
+
 function getComputerChoice(){
     const items = ["Rock", "Paper", "Scissors"]; 
     const randomNumber = Math.floor(3*(Math.random())); 
     return items[randomNumber]; 
 }
 
-
 function playRound(computerSelection, playerSelection){
-   var player =  playerSelection[0].toUpperCase() + playerSelection.toLowerCase().slice(1, playerSelection.length);
-   if(player == ("Rock") || player == ("Paper") || player ==("Scissors")){
-    var win = true; 
-    if(computerSelection == player){
-     console.log("Tie: " + computerSelection + " ties " + player); 
-     return 0; 
-    }
-    else if(computerSelection == "Rock"){
-     if(player == "Scissors"){
-         win = false; 
-     }
-    }
-     else if(computerSelection == "Scissors") {
-         if(player == "Paper"){
-             win = false; 
-         }
-     }
- 
-     if(!win){
-         console.log("You Lose: " + computerSelection + " (Computer) beats " + player + " (Human)");
-         return -1; 
-     }
-     else{
-         console.log("You Win: " + player + " (Human) beats " + computerSelection + " (Computer)"); 
-         return 1; 
-     }
-   }
+    const computerImage = document.querySelector(".Computer-Choice").firstElementChild; 
+    const playerImage = document.querySelector(".Human-Choice").firstElementChild;
 
-
-    else{
-        console.log("invalid input: please try again"); 
-        return 0; 
-    }
-}
-
-function game(){
-    let humanScore = 0; 
-    let computerScore =0; 
-    for(let i = 0; i< 5; i++){
-        let computer = getComputerChoice(); 
-        let player = prompt("Enter a move: "); 
-        let status = playRound(computer, player);
-        if(status == 1){
-            humanScore += 1; 
-        }
-        else if(status == -1){
-            computerScore+=1; 
-        }
-        console.log("Current Score: Computer: " + computerScore + " Human Score: " + humanScore); 
-    }
-    if(computerScore > humanScore){
-        console.log("Computer Wins! Final score: Computer: " + computerScore + " Human Score: " + humanScore); 
+    if(playerSelection == "Rock"){
+        playerImage.setAttribute("src", "./rock.png"); 
     }
 
-    else if (humanScore > computerScore){
-        console.log("You Win! Final score: Computer: " + computerScore + " Human Score: " + humanScore); 
+    if(playerSelection == "Paper"){
+        playerImage.setAttribute("src", "./paper.png"); 
     }
 
-    else{
-        console.log("Tie! Final score: Computer: " + computerScore + " Human Score: " + humanScore); 
+    if(playerSelection == "Scissors"){
+        playerImage.setAttribute("src", "./scissors.png"); 
     }
-}
-
-game(); 
-
-
-
- 
-
-
     
+    if(computerSelection == "Rock"){
+        computerImage.setAttribute("src", "./rock.png"); 
+    }
+
+    if(computerSelection == "Paper"){
+        computerImage.setAttribute("src", "./paper.png"); 
+    }
+
+    if(computerSelection == "Scissors"){
+        computerImage.setAttribute("src", "./scissors.png"); 
+    }
+
+   var player =  playerSelection[0].toUpperCase() + playerSelection.toLowerCase().slice(1, playerSelection.length);
+   const result = document.querySelector(".round-text"); 
+    if(computerSelection == player){
+    result.textContent = "Tie: " + computerSelection + " (Computer) ties " + player + " (Human)"; 
+    return 0; 
+    }
+    else if(((computerSelection == "Rock")&&(player == "Scissors")) || ((computerSelection == "Scissors")&&(player == "Paper"))|| ((computerSelection == "Paper")&&(player == "Rock"))){
+        result.textContent = "You Lose this round: " + computerSelection + " (Computer) beats " + player + " (Human)"; 
+        return -1; 
+    }
+    else{
+        result.textContent = "You Win this round: " + player + " (Human) beats " + computerSelection + " (Computer)"; 
+        return 1; 
+    }
+}
+
+function playATurn(){
+    let status = playRound(getComputerChoice(), event.target.innerText);
+    if(status == 1){
+        humanScore += 1; 
+    }
+    else if(status == -1){
+        computerScore+=1; 
+    }
+    const score = document.querySelector(".score-text"); 
+    score.textContent = "Current Score: Computer: " + computerScore + " Human Score: " + humanScore; 
+
+    document.querySelector(".Computer").classList.add("visible"); 
+    document.querySelector(".Human").classList.add("visible"); 
+
+    const finalResult = document.querySelector(".final-text"); 
+    
+    if(humanScore == 5 || computerScore ==5){
+        if(humanScore == 5){ 
+            finalResult.textContent = "You Win! You defeated the computer! 😁"; 
+        }
+        if(computerScore ==5){
+            finalResult.textContent = "Sorry! you lost to the computer! 😭"; 
+        }
+        const finalBox = document.querySelector(".final-result").classList.add("pink"); 
+        const roundResult = document.querySelector(".round-text");
+        //roundResult.innerHTML = "";  
+        score.textContent = "Final Score: Computer: " + computerScore + " Human Score: " + humanScore; 
+        const buttons = document.querySelectorAll(".btn")
+        buttons.forEach(function(currentBtn){
+        currentBtn.disabled = true; 
+        })
+    }
+}
+
+function reset(){
+    humanScore = 0; 
+    computerScore = 0; 
+    const roundResult = document.querySelector(".round-text"); 
+    const scoreKeep = document.querySelector(".score-text"); 
+    const finalResult = document.querySelector(".final-text"); 
+    console.log(roundResult.innerHTML); 
+    roundResult.innerHTML = "";  
+    scoreKeep.innerHTML = ""; 
+    finalResult.innerHTML = ""; 
+    const buttons = document.querySelectorAll(".btn")
+        buttons.forEach(function(currentBtn){
+        currentBtn.disabled = false; 
+        })
+
+    const compImg = document.querySelector(".Computer-Choice").firstElementChild; 
+    const humanImg = document.querySelector(".Human-Choice").firstElementChild; 
+    compImg.removeAttribute("src");  
+    humanImg.removeAttribute("src"); 
+
+    document.querySelector(".final-result").classList.remove("pink"); 
+
+
+    document.querySelector(".Computer").classList.remove("visible"); 
+    document.querySelector(".Human").classList.remove("visible"); 
+     
+}
+
+
+
+
