@@ -1,1 +1,96 @@
+h1{
+    text-align: left; 
+    margin-left: 20px; 
+}
+
+.question{
+    text-align: right; 
+    margin-right: 20px; 
+}
+
+.button-box{
+    background-color: hotpink; 
+}
+
+.results{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 80vh;   
+    background-color: purple; 
+}
+
+.grid-box{
+    min-width: 600px;
+    height: 100%;  
+}
+
+.grid{
+    display: grid; 
+    width: 100%; 
+    height: 100%; 
+    grid-template-rows: 0.5fr 0.5fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+}
+
+.round-result{ 
+    text-align: center; 
+    grid-area:  6/1/7/3; 
+}
+
+img{
+    width: 100%; 
+    max-height: 100%;
+    object-fit: cover;  
+}
+
+.Computer{
+    grid-area: 2/1/3/2;  
+    text-align: center; 
+    visibility: hidden; 
+    color: cornflowerblue; 
+}
+
+
+.Human{
+    grid-area: 2/2/3/3; 
+    text-align: center; 
+    visibility: hidden;  
+    color: cornflowerblue;
+}
+.visible{
+    visibility: visible; 
+}
+
+.Computer-Choice{
+    object-fit: contain; 
+    grid-area: 3/1/6/2; 
+}
+
+.Human-Choice{
+    object-fit: contain; 
+    background-color: purple; 
+    grid-area: 3/2/6/3; 
+}
+
+.score-keep{ 
+    text-align: center; 
+    grid-area: 1/1/2/3;  
+}
+
+.final-result{ 
+    grid-area: 7/1/8/3; 
+    text-align: center;  
+}
+
+.score-text,  .round-text{
+    font-style: sans-serif; 
+    font-weight: bold; 
+    color: white; 
+}
+
+.pink{
+    background-color:lawngreen; 
+}
 
