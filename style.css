@@ -12,6 +12,7 @@ h1{
     margin-left: 20px; 
     font-family: 'Titan One', cursive;
     color: #FBE7C6; 
+    -webkit-text-stroke: 2px teal;
 }
 
 .reset{
@@ -25,6 +26,7 @@ h1{
     margin-right: 20px; 
     font-family: 'Titan One', cursive;
     color: #FBE7C6; 
+    -webkit-text-stroke: 2px teal;
 }
 
 .button-box{
@@ -70,6 +72,7 @@ img{
     visibility: hidden; 
     color: #A0E7E5; 
     -webkit-text-stroke: 2px teal; 
+    font-size: 1.5rem; 
 }
 
 .btn{
@@ -78,6 +81,7 @@ img{
     font-family: 'Titan One', cursive;
     padding: 10px; 
     color: #FFAEBC;; 
+    border: solid lightgray; 
 }
 
 .Human{
@@ -85,7 +89,8 @@ img{
     text-align: center; 
     visibility: hidden;  
     color: #A0E7E5; 
-    -webkit-text-stroke: 2px teal; 
+    -webkit-text-stroke: 2px teal;
+    font-size: 1.5rem;  
 }
 .visible{
     visibility: visible; 
@@ -120,8 +125,8 @@ img{
 .score-text,  .round-text{
     font-style: sans-serif; 
     font-weight: bold; 
-    color: peachpuff; 
-    -webkit-text-stroke: 2px orange; 
+    color:  #FBE7C6; 
+    -webkit-text-stroke: 2px  #FFAEBC;; 
     font-size: 2rem; 
 }
 
