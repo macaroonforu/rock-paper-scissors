@@ -2,12 +2,39 @@ let humanScore = 0;
 let computerScore = 0; 
 
 const buttons = document.querySelectorAll(".btn")
-buttons.forEach(function(currentBtn){
-  currentBtn.addEventListener('click', playATurn)
-})
+    buttons.forEach(function(currentBtn){
+    currentBtn.addEventListener('click', playATurn)
+    })
 
-const resetButton = document.querySelector(".reset");
-resetButton.addEventListener('click', reset); 
+function initializeButtons(){
+    results = document.querySelector(".results"); 
+    results.display = ("none");
+    results.innerHTML = `<div class = "grid-box">
+    <div class = "grid">
+        <div class = "score-keep">
+            <p class = "score-text"></p>
+        </div>
+    
+        <div class = "Computer"><h3>Computer's Move</h3></div>
+        <div class = "Human"><h3>Human's Move</h3></div>
+
+        <div class = "Computer-Choice"><img></div>
+        <div class = "Human-Choice"><img></div>
+           
+        <div class = "round-result">
+            <p class = "round-text"></p>
+        </div>
+
+        <div class = "final-result">
+            <h2 class = "final-text"></h2>
+            <button class = "reset">Play Again</button> 
+        </div>
+        
+    </div>
+</div>`; 
+    const resetButton = document.querySelector(".reset");
+    resetButton.addEventListener('click', reset); 
+}
 
 
 function getComputerChoice(){
@@ -17,6 +44,9 @@ function getComputerChoice(){
 }
 
 function playRound(computerSelection, playerSelection){
+    initializeButtons(); 
+    results = document.querySelector(".results"); 
+    results.display = ("flex");
     const computerImage = document.querySelector(".Computer-Choice").firstElementChild; 
     const playerImage = document.querySelector(".Human-Choice").firstElementChild;
 
@@ -95,7 +125,8 @@ function playATurn(){
     }
 }
 
-function reset(){
+function reset(){ 
+
     humanScore = 0; 
     computerScore = 0; 
     const roundResult = document.querySelector(".round-text"); 
@@ -118,10 +149,19 @@ function reset(){
     document.querySelector(".final-result").classList.remove("pink"); 
     document.querySelector(".Computer").classList.remove("visible"); 
     document.querySelector(".Human").classList.remove("visible"); 
-    document.querySelector(".reset").classList.remove("visible"); 
-
-     
+    document.querySelector(".reset").classList.remove("visible");
+    display();    
 }
+
+function display(){
+    results = document.querySelector(".results"); 
+    results.innerHTML = `<div>
+    <p class = "opening-text">Make your first Move to start!</p>
+</div>`; 
+}
+
+display(); 
+//initializeButtons(); 
 
 
 
