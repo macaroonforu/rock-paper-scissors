@@ -2,7 +2,7 @@
 rock-paper-scissors in JavaScript
 
 
-Click this link to play: https://macaroonforu.github.io/rock-paper-scissors/
+Click this [link]( https://macaroonforu.github.io/rock-paper-scissors/) to play
 
 
 To do:
