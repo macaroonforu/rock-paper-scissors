@@ -1,5 +1,5 @@
-# rock-paper-scissors
-rock-paper-scissors with vanilla JavaScript, HTML, and CSS
+# Rock Paper Scissors 
+rock paper scissors with vanilla JavaScript, HTML, and CSS
 
 
 Click this [link](https://macaroonforu.github.io/rock-paper-scissors/) to play
