@@ -1,4 +1,5 @@
 # Rock Paper Scissors 
+(have to fix responsiveness for mobile) 
 rock paper scissors with vanilla JavaScript, HTML, and CSS
 
 
