@@ -37,28 +37,26 @@ h1{
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    min-height: 95vh; 
+    min-height: 90vh; 
     background-color: #A0E7E5; 
 }
 
 .grid-box{
     min-width: 600px;
-    height: 100%;  
 }
 
 .grid{
     background-color: #A0E7E5; 
     display: grid; 
     width: 100%; 
-    height: 100%; 
-    grid-template-rows: 0.5fr 0.5fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 0.15fr 0.15fr 1fr 0.25fr 1fr; 
     grid-template-columns: 1fr 1fr; 
     gap: 30px; 
 }
 
 .round-result{ 
     text-align: center; 
-    grid-area:  6/1/7/3; 
+    grid-area:  4/1/5/3; 
 }
 
 img{
@@ -107,7 +105,7 @@ img{
 .Human-Choice{
     object-fit: contain; 
     /*background-color: purple; */
-    grid-area: 3/2/5/3; 
+    grid-area: 3/2/4/3; 
 }
 
 .score-keep{ 
@@ -120,11 +118,13 @@ img{
     align-items: center; 
     justify-content: center; 
     flex-direction: column; 
-    grid-area: 7/1/8/3; 
+    grid-area: 5/1/6/3; 
     width: 100%; 
     text-align: center;
     border-radius: 10px;  
-}
+}   
+
+
 
 .score-text,  .round-text{
     font-style: sans-serif; 
@@ -134,9 +134,6 @@ img{
     font-size: 2rem; 
 }
 
-.pink{
-    background-color: #B4F8C8; 
-}
 
 .opening-text{
     font-family: 'Titan One', cursive;
@@ -158,7 +155,7 @@ img{
         height: 100%;  
     }
     .grid{
-        grid-template-rows: 0.5fr 0.25fr 1fr 0.25fr 1fr 0.25fr 0.25fr; 
+        grid-template-rows: 0.5fr 0.2fr 1fr 0.2fr 1fr 0.25fr 0.25fr 0.25fr; 
         grid-template-columns: 1fr; 
     }
     .score-keep{ 
