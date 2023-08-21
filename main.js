@@ -1,3 +1,5 @@
+
+
 let humanScore = 0; 
 let computerScore = 0; 
 
@@ -105,13 +107,13 @@ function playATurn(){
     document.querySelector(".Human").classList.add("visible"); 
 
     const finalResult = document.querySelector(".final-text"); 
-    
+    const results = document.querySelector(".round-text");
     if(humanScore == 5 || computerScore ==5){
         if(humanScore == 5){ 
-            finalResult.textContent = "You Win! You defeated the computer! 😁"; 
+            results.textContent = "You Win! You defeated the computer! 😁"; 
         }
         if(computerScore ==5){
-            finalResult.textContent = "Sorry! you lost to the computer! 😭"; 
+            results.textContent = "Sorry! you lost to the computer! 😭"; 
         }
         document.querySelector(".final-result").classList.add("pink"); 
         document.querySelector(".round-text");
@@ -161,7 +163,7 @@ function display(){
 }
 
 display(); 
-//initializeButtons(); 
+
 
 
 
