@@ -12,7 +12,7 @@ h1{
     margin-left: 20px; 
     font-family: 'Titan One', cursive;
     color: #FBE7C6; 
-    -webkit-text-stroke: 2px teal;
+    -webkit-text-stroke: 1px teal;
 }
 
 .reset{
@@ -26,7 +26,7 @@ h1{
     margin-right: 20px; 
     font-family: 'Titan One', cursive;
     color: #FBE7C6; 
-    -webkit-text-stroke: 2px teal;
+    -webkit-text-stroke: 1px teal;
 }
 
 .button-box{
@@ -37,8 +37,8 @@ h1{
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    height: 95vh; 
-    background-color: lightcyan; 
+    min-height: 95vh; 
+    background-color: #A0E7E5; 
 }
 
 .grid-box{
@@ -47,6 +47,7 @@ h1{
 }
 
 .grid{
+    background-color: #A0E7E5; 
     display: grid; 
     width: 100%; 
     height: 100%; 
@@ -71,7 +72,7 @@ img{
     text-align: center; 
     visibility: hidden; 
     color: #A0E7E5; 
-    -webkit-text-stroke: 2px teal; 
+    -webkit-text-stroke: 1px teal; 
     font-size: 1.5rem; 
 }
 
@@ -79,9 +80,11 @@ img{
     background-color:  #FBE7C6; 
     border-radius: 10px; 
     font-family: 'Titan One', cursive;
+    font-size: 20px; 
     padding: 10px; 
-    color: #FFAEBC;; 
+    color: #f3c3cb;; 
     border: solid lightgray; 
+    -webkit-text-stroke: 1px  #ec6d82;
 }
 
 .Human{
@@ -89,21 +92,22 @@ img{
     text-align: center; 
     visibility: hidden;  
     color: #A0E7E5; 
-    -webkit-text-stroke: 2px teal;
+    -webkit-text-stroke: 1px teal;
     font-size: 1.5rem;  
 }
+
 .visible{
     visibility: visible; 
 }
 .Computer-Choice{
     object-fit: contain; 
-    grid-area: 3/1/6/2; 
+    grid-area: 3/1/5/2; 
 }
 
 .Human-Choice{
     object-fit: contain; 
     /*background-color: purple; */
-    grid-area: 3/2/6/3; 
+    grid-area: 3/2/5/3; 
 }
 
 .score-keep{ 
@@ -126,7 +130,7 @@ img{
     font-style: sans-serif; 
     font-weight: bold; 
     color:  #FBE7C6; 
-    -webkit-text-stroke: 2px  #FFAEBC;; 
+    -webkit-text-stroke: 1px  #FFAEBC;
     font-size: 2rem; 
 }
 
@@ -137,10 +141,47 @@ img{
 .opening-text{
     font-family: 'Titan One', cursive;
     font-size: 3rem; 
-    color: #A0E7E5; 
+    color: #3fb6b2; 
+    text-align: center; 
 }
 
 .final-text{
     margin-top: 10px; 
 }
 
+@media(max-width: 630px) {
+    .results{
+        height: 100%; 
+    }
+    .grid-box{
+        min-width: 300px;
+        height: 100%;  
+    }
+    .grid{
+        grid-template-rows: 0.5fr 0.25fr 1fr 0.25fr 1fr 0.25fr 0.25fr; 
+        grid-template-columns: 1fr; 
+    }
+    .score-keep{ 
+        grid-area: 1/1/2/2;  
+    }
+    .Computer{
+        grid-area: 2/1/3/2; 
+    }
+    .Computer-Choice{
+        grid-area: 3/1/4/2; 
+        object-fit: contain;
+    }
+    .Human{
+        grid-area: 4/1/5/2; 
+    }
+    .Human-Choice{
+        grid-area: 5/1/6/2; 
+        object-fit: contain;
+    }
+    .round-result{
+        grid-area: 6/1/7/2; 
+    }
+    .final-result{
+        grid-area: 7/1/8/2; 
+    }
+}
