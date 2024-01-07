@@ -83,11 +83,11 @@ function playRound(computerSelection, playerSelection){
     return 0; 
     }
     else if(((computerSelection == "Rock")&&(player == "Scissors")) || ((computerSelection == "Scissors")&&(player == "Paper"))|| ((computerSelection == "Paper")&&(player == "Rock"))){
-        result.textContent = "You Lose this round: " + computerSelection + " (Computer) beats " + player + " (Human)"; 
+        result.textContent = "Loss: " + computerSelection + " (Computer) beats " + player + " (Human)"; 
         return -1; 
     }
     else{
-        result.textContent = "You Win this round: " + player + " (Human) beats " + computerSelection + " (Computer)"; 
+        result.textContent = "Win: " + player + " (Human) beats " + computerSelection + " (Computer)"; 
         return 1; 
     }
 }
@@ -101,7 +101,7 @@ function playATurn(){
         computerScore+=1; 
     }
     const score = document.querySelector(".score-text"); 
-    score.textContent = "Current Score: Computer: " + computerScore + " Human Score: " + humanScore; 
+    score.textContent = "Current Score: Computer: " + computerScore + " Human: " + humanScore; 
 
     document.querySelector(".Computer").classList.add("visible"); 
     document.querySelector(".Human").classList.add("visible"); 
