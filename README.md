@@ -13,4 +13,7 @@
 
 A simple application that allows a user to play a game of rock-paper-scissors against a computer.
 
-![image](https://github.com/macaroonforu/rock-paper-scissors/assets/121368271/7c90d210-17a2-482d-9523-a0195d435a78)
+<div  align=center>
+	<img src="https://github.com/macaroonforu/rock-paper-scissors/assets/121368271/dbe79f72-84c4-45f9-a074-8479c2da4db3">
+</div>
+
