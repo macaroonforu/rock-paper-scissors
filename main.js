@@ -118,7 +118,7 @@ function playATurn(){
         document.querySelector(".final-result").classList.add("pink"); 
         document.querySelector(".round-text");
         //roundResult.innerHTML = "";  
-        score.textContent = "Final Score: Computer: " + computerScore + " Human Score: " + humanScore; 
+        score.textContent = "Final Score: Computer: " + computerScore + " Human: " + humanScore; 
         const buttons = document.querySelectorAll(".btn")
         buttons.forEach(function(currentBtn){
         currentBtn.disabled = true; 
